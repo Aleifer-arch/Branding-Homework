@@ -9,96 +9,97 @@
   .slide { 
     position:absolute; width:100%; height:100%; opacity:0; 
     display:flex; align-items:center; justify-content:center; 
-    animation: fadeSlide 35s infinite;
   }
   
   .intro1 { 
-    background:#000000;
-    flex-direction:column;
-    color:#F4EFEA;
-    text-align:center;
+    background:#000000; flex-direction:column; color:#F4EFEA; text-align:center;
+    animation: fadeSlide 23s infinite;
   }
   .intro1 h1 { 
     font-size:4rem; color:#2ECC71; margin:0 0 30px 0;
     opacity:0; transform:translateX(200px);
-    animation: textIn 35s infinite;
+    animation: textIn 4s infinite;
   }
   .intro1 p { 
     font-size:2.5rem; color:#2ECC71; margin:0;
     opacity:0; transform:translateX(200px);
-    animation: textIn 35s infinite 1.5s;
+    animation: textIn 4s infinite 0.8s;
   }
   
   .intro2 { 
-    background:#000000;
-    flex-direction:column;
-    color:#F4EFEA;
-    text-align:center;
+    background:#000000; flex-direction:column; color:#F4EFEA; text-align:center;
+    animation: fadeSlideLong 23s infinite 4s;
   }
   .intro2 h2 { 
     font-size:3rem; color:#2ECC71; margin:0 0 40px 0;
     opacity:0; transform:translateX(200px);
-    animation: textIn 35s infinite 7s;
+    animation: textInLong 10s infinite 4s;
   }
   .intro2 .anggota {
     opacity:0; transform:translateX(200px);
-    animation: textIn 35s infinite 8.5s;
+    animation: textInLong 10s infinite 5s;
   }
   .intro2 p { font-size:1.4rem; line-height:2; margin:6px 0; }
   
   .wonton { 
-    background:#0A1E2E; 
-    justify-content:space-around;
+    background:#0A1E2E; justify-content:space-around;
+    animation: fadeSlide 23s infinite;
   }
   .wonton img { 
     width:45%; border-radius:20px; box-shadow:0 0 30px rgba(0,0,0,0.5);
     opacity:0; transform:scale(0.8);
-    animation: imgZoom 35s infinite;
+    animation: imgZoom 3s infinite;
   }
   .text { 
     width:45%; color:#F4EFEA;
     opacity:0; transform:translateX(200px);
-    animation: textIn 35s infinite;
+    animation: textIn 3s infinite;
   }
   .text h2 { font-size:3rem; color:#2ECC71; margin:0 0 10px 0; }
   .text p { font-size:1.5rem; line-height:1.6; }
   
   .slide:nth-child(1) { animation-delay:0s; }
-  .slide:nth-child(1) img, .slide:nth-child(1) .text { animation-delay:0s; }
-  .slide:nth-child(2) { animation-delay:7s; }
-  .slide:nth-child(2) img, .slide:nth-child(2) .text { animation-delay:7s; }
+  .slide:nth-child(2) { animation-delay:4s; }
   .slide:nth-child(3) { animation-delay:14s; }
-  .slide:nth-child(3) img { animation-delay:14s; }
-  .slide:nth-child(3) .text { animation-delay:15s; }
-  .slide:nth-child(4) { animation-delay:21s; }
-  .slide:nth-child(4) img { animation-delay:21s; }
-  .slide:nth-child(4) .text { animation-delay:22s; }
-  .slide:nth-child(5) { animation-delay:28s; }
-  .slide:nth-child(5) img { animation-delay:28s; }
-  .slide:nth-child(5) .text { animation-delay:29s; }
+  .slide:nth-child(3) img, .slide:nth-child(3) .text { animation-delay:14s; }
+  .slide:nth-child(4) { animation-delay:17s; }
+  .slide:nth-child(4) img, .slide:nth-child(4) .text { animation-delay:17s; }
+  .slide:nth-child(5) { animation-delay:20s; }
+  .slide:nth-child(5) img, .slide:nth-child(5) .text { animation-delay:20s; }
   
   @keyframes fadeSlide {
     0% { opacity:0; }
+    5% { opacity:1; }
+    95% { opacity:1; }
+    100% { opacity:0; }
+  }
+  
+  @keyframes fadeSlideLong {
+    0% { opacity:0; }
     2% { opacity:1; }
-    18% { opacity:1; }
-    20% { opacity:0; }
+    98% { opacity:1; }
     100% { opacity:0; }
   }
   
   @keyframes textIn {
     0% { opacity:0; transform:translateX(200px); }
-    3% { opacity:1; transform:translateX(0); }
-    17% { opacity:1; transform:translateX(0); }
-    20% { opacity:0; transform:translateX(-200px); }
+    20% { opacity:1; transform:translateX(0); }
+    80% { opacity:1; transform:translateX(0); }
+    100% { opacity:0; transform:translateX(-200px); }
+  }
+  
+  @keyframes textInLong {
+    0% { opacity:0; transform:translateX(200px); }
+    8% { opacity:1; transform:translateX(0); }
+    92% { opacity:1; transform:translateX(0); }
     100% { opacity:0; transform:translateX(-200px); }
   }
   
   @keyframes imgZoom {
     0% { opacity:0; transform:scale(0.8); }
-    3% { opacity:1; transform:scale(1.05); }
-    5% { transform:scale(1); }
-    17% { opacity:1; transform:scale(1); }
-    20% { opacity:0; transform:scale(0.8); }
+    20% { opacity:1; transform:scale(1.05); }
+    30% { transform:scale(1); }
+    80% { opacity:1; transform:scale(1); }
     100% { opacity:0; transform:scale(0.8); }
   }
   
