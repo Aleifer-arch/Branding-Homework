@@ -3,13 +3,13 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
-  body { margin:0; font-family:sans-serif; overflow:hidden; }
+  body { margin:0; font-family:sans-serif; overflow:hidden; background:#000; }
   .slider { width:100vw; height:100vh; position:relative; }
   
   .slide { 
     position:absolute; width:100%; height:100%; opacity:0; 
     display:flex; align-items:center; justify-content:space-around; 
-    animation: slideShow 16s infinite;
+    animation: slideShow 20s infinite;
   }
   
   .intro { 
@@ -17,9 +17,30 @@
     justify-content:center; text-align:center; flex-direction:column;
     color:#F4EFEA;
   }
-  .intro h1 { font-size:3.5rem; color:#2ECC71; margin:0 0 20px 0; }
-  .intro h2 { font-size:2rem; margin:0 0 30px 0; }
+  .intro > * {
+    opacity:0;
+    transform:translateX(100%);
+    animation: textSequence 20s infinite;
+  }
+  .intro h1 { 
+    font-size:3.5rem; color:#2ECC71; margin:0 0 20px 0; 
+    animation-delay:0s, 0s;
+  }
+  .intro h2 { 
+    font-size:2rem; margin:0 0 30px 0; 
+    animation-delay:0.5s, 0s;
+  }
   .intro p { font-size:1.3rem; line-height:1.8; margin:5px 0; }
+  .intro p:nth-of-type(1) { animation-delay:1s; }
+  .intro p:nth-of-type(2) { animation-delay:1.3s; }
+  .intro p:nth-of-type(3) { animation-delay:1.6s; }
+  .intro p:nth-of-type(4) { animation-delay:1.9s; }
+  .intro p:nth-of-type(5) { animation-delay:2.2s; }
+  .intro p:nth-of-type(6) { animation-delay:2.5s; }
+  .intro p:nth-of-type(7) { animation-delay:2.8s; }
+  .intro p:nth-of-type(8) { animation-delay:3.1s; }
+  .intro p:nth-of-type(9) { animation-delay:3.4s; }
+  .intro p:nth-of-type(10) { animation-delay:3.7s, 0s; }
   
   .wonton { background:#0A1E2E; }
   .wonton img { width:45%; border-radius:20px; box-shadow:0 0 30px rgba(0,0,0,0.5); }
@@ -28,16 +49,37 @@
   .text p { font-size:1.5rem; line-height:1.6; }
   
   .slide:nth-child(1) { animation-delay:0s; }
-  .slide:nth-child(2) { animation-delay:4s; }
-  .slide:nth-child(3) { animation-delay:8s; }
-  .slide:nth-child(4) { animation-delay:12s; }
+  .slide:nth-child(2) { animation-delay:5s; }
+  .slide:nth-child(3) { animation-delay:10s; }
+  .slide:nth-child(4) { animation-delay:15s; }
   
   @keyframes slideShow {
+    0% { opacity:0; }
+    2% { opacity:1; }
+    23% { opacity:1; }
+    25% { opacity:0; }
+    100% { opacity:0; }
+  }
+  
+  @keyframes textSequence {
     0% { opacity:0; transform:translateX(100%); }
     3% { opacity:1; transform:translateX(0); }
-    22% { opacity:1; transform:translateX(0); }
-    25% { opacity:0; transform:translateX(-100%); }
+    20% { opacity:1; transform:translateX(0); }
+    23% { opacity:0; transform:translateX(-100%); }
     100% { opacity:0; transform:translateX(-100%); }
+  }
+  
+  .intro h1, .intro p:nth-of-type(10) {
+    animation: textZoom 20s infinite;
+  }
+  
+  @keyframes textZoom {
+    0% { opacity:0; transform:translateX(100%) scale(0.8); }
+    3% { opacity:1; transform:translateX(0) scale(1.1); }
+    5% { transform:translateX(0) scale(1); }
+    20% { opacity:1; transform:translateX(0) scale(1); }
+    23% { opacity:0; transform:translateX(-100%) scale(0.8); }
+    100% { opacity:0; transform:translateX(-100%) scale(0.8); }
   }
   
   @media (max-width: 768px) {
@@ -63,7 +105,7 @@
     <p>2. NOVELIA DIAN NOVITA</p>
     <p>3. KHASIFA RAMANDANI</p>
     <p>4. AFNIKA DEWI IRMAWATI</p>
-    <p>5. NINDY SAEI CAHYA SEPTIANI</p>
+    <p>5. NINDY SARI CAHYA SEPTIANI</p>
     <p>6. RISQI ARINAL KHUSNA</p>
     <p>7. FEBRIAN ANGGA</p>
     <p>8. ZAINAL ABIDIN</p>
