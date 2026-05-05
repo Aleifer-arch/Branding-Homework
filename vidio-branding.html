@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WONTON DAGING CHILI OIL Intro</title>
+<style>
+  body {
+    margin: 0;
+    background: #0A0A0A;
+    font-family: 'Poppins', sans-serif;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+  .scene {
+    text-align: center;
+    color: #00BFA6;
+  }
+  .logo {
+    font-size: 50px;
+    font-weight: 800;
+    opacity: 0;
+    animation: fadeIn 1s ease-in 0.5s forwards;
+  }
+  .slogan {
+    font-size: 18px;
+    color: white;
+    opacity: 0;
+    animation: slideUp 1s ease-out 2s forwards;
+    margin-top: 10px;
+  }
+  .harga {
+    font-size: 40px;
+    font-weight: bold;
+    opacity: 0;
+    transform: scale(0.5);
+    animation: zoomIn 0.8s ease-out 3.5s forwards;
+    margin-top: 20px;
+    color: #FFD166;
+  }
+  .uap {
+    position: absolute;
+    width: 5px; height: 5px;
+    background: white; opacity: 0.3;
+    border-radius: 50%;
+    animation: naik 4s linear infinite;
+  }
+  /* Animasi */
+  @keyframes fadeIn { to { opacity: 1; } }
+  @keyframes slideUp { 
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes zoomIn { 
+    to { opacity: 1; transform: scale(1); } 
+  }
+  @keyframes naik {
+    0% { transform: translateY(0); opacity: 0; }
+    50% { opacity: 0.4; }
+    100% { transform: translateY(-200px); opacity: 0; }
+  }
+  .credit {
+    position: absolute; bottom: 20px;
+    color: #333; font-size: 12px;
+    opacity: 0; animation: fadeIn 1s ease-in 5s forwards;
+  }
+</style>
+</head>
+<body>
+  <!-- Bikin 5 uap wonton random -->
+  <div class="uap" style="left:45%; animation-delay: 0s;"></div>
+  <div class="uap" style="left:50%; animation-delay: 1s;"></div>
+  <div class="uap" style="left:55%; animation-delay: 2s;"></div>
+
+  <div class="scene">
+    <div class="logo">🥟 Wonton Daging Chili Oil</div>
+    <div class="slogan">"Rasa Enak Harga Pelajar"</div>
+    <div class="harga">Rp 8.000</div>
+  </div>
+
+  <div class="credit">KIK Kelompok Ciwi | 2026</div>
+</body>
+</html>
