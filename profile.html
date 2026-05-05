@@ -3,63 +3,34 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
-  body { margin:0; font-family:sans-serif; overflow:hidden; background:#000; }
+  body { margin:0; background:#0A1E2E; font-family:sans-serif; overflow:hidden; }
   .slider { width:100vw; height:100vh; position:relative; }
-  
   .slide { 
     position:absolute; width:100%; height:100%; opacity:0; 
-    display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center;
-    animation: fadeSlide 21s infinite;
+    display:flex; align-items:center; justify-content:space-around; 
+    animation: slideShow 12s infinite; 
   }
-  
-  .slide img { 
-    width:80%; max-width:500px; border-radius:20px; box-shadow:0 0 30px rgba(0,0,0,0.5); margin-bottom:25px;
-    opacity:0; transform:scale(0.8);
-    animation: imgZoom 21s infinite;
-  }
-  
-  .text { 
-    width:85%; max-width:600px; color:#F4EFEA;
-    opacity:0; transform:translateY(50px);
-    animation: textIn 21s infinite;
-  }
+  .slide img { width:45%; border-radius:20px; box-shadow:0 0 30px rgba(0,0,0,0.5); }
+  .text { width:45%; color:#F4EFEA; }
   .text h2 { font-size:3rem; color:#2ECC71; margin:0 0 10px 0; }
   .text p { font-size:1.5rem; line-height:1.6; }
   
   .slide:nth-child(1) { animation-delay:0s; }
-  .slide:nth-child(1) img, .slide:nth-child(1) .text { animation-delay:0s; }
-  .slide:nth-child(2) { animation-delay:7s; }
-  .slide:nth-child(2) img, .slide:nth-child(2) .text { animation-delay:7s; }
-  .slide:nth-child(3) { animation-delay:14s; }
-  .slide:nth-child(3) img, .slide:nth-child(3) .text { animation-delay:14s; }
+  .slide:nth-child(2) { animation-delay:4s; }
+  .slide:nth-child(3) { animation-delay:8s; }
   
-  @keyframes fadeSlide {
-    0% { opacity:0; }
-    5% { opacity:1; }
-    28% { opacity:1; }
-    33% { opacity:0; }
-    100% { opacity:0; }
-  }
-  
-  @keyframes textIn {
-    0% { opacity:0; transform:translateY(50px); }
-    5% { opacity:1; transform:translateY(0); }
-    28% { opacity:1; transform:translateY(0); }
-    33% { opacity:0; transform:translateY(-50px); }
-    100% { opacity:0; transform:translateY(-50px); }
-  }
-  
-  @keyframes imgZoom {
-    0% { opacity:0; transform:scale(0.8); }
-    5% { opacity:1; transform:scale(1.05); }
-    10% { transform:scale(1); }
-    28% { opacity:1; transform:scale(1); }
-    33% { opacity:0; transform:scale(0.8); }
-    100% { opacity:0; transform:scale(0.8); }
+  @keyframes slideShow {
+    0% { opacity:0; transform:translateX(100%); }
+    5% { opacity:1; transform:translateX(0); }    /* Masuk 5% */
+    30% { opacity:1; transform:translateX(0); }   /* Diem 25% */
+    35% { opacity:0; transform:translateX(-100%); }/* Keluar 5% */
+    100% { opacity:0; transform:translateX(-100%); }
   }
   
   @media (max-width: 768px) {
-    .slide img { width:85%; }
+    .slide { flex-direction:column; justify-content:center; text-align:center; }
+    .slide img { width:85%; margin-bottom:20px; }
+    .text { width:85%; }
     .text h2 { font-size:1.8rem; }
     .text p { font-size:1rem; }
   }
@@ -67,15 +38,13 @@
 </head>
 <body>
 <div class="slider">
-  
   <div class="slide">
     <img src="foto1.jpg">
     <div class="text">
       <h2>Tampilan Menggoda</h2>
-      <p>Wonton Daging Chili Oil dengan taburan kacang & daun ketumbar. Visual premium, rasa bintang lima.</p>
+      <p>Wonton Chili Oil dengan taburan kacang & daun ketumbar. Visual premium, rasa bintang lima.</p>
     </div>
   </div>
-  
   <div class="slide">
     <img src="foto2.jpg">
     <div class="text">
@@ -83,7 +52,6 @@
       <p>Dibuat dari daging ayam segar. Tinggi protein, 0% pengawet, aman untuk lambung.</p>
     </div>
   </div>
-  
   <div class="slide">
     <img src="foto3.jpg">
     <div class="text">
@@ -91,7 +59,6 @@
       <p>Dikukus 5 menit langsung jadi. Solusi makanan lembut untuk pelajar.</p>
     </div>
   </div>
-
 </div>
 </body>
 </html>
