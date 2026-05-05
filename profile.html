@@ -4,29 +4,29 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
   body { margin:0; font-family:sans-serif; overflow:hidden; background:#000; }
- .slider { width:100vw; height:100vh; position:relative; }
+.slider { width:100vw; height:100vh; position:relative; }
 
- .slide {
+.slide {
     position:absolute; width:100%; height:100%; opacity:0;
     display:flex; align-items:center; justify-content:center;
   }
 
- .intro1 {
+.intro1 {
     background:#000000; flex-direction:column; color:#F4EFEA; text-align:center;
     animation: fadeSlide 23s infinite;
   }
- .intro1 h1 {
+.intro1 h1 {
     font-size:4rem; color:#2ECC71; margin:0 0 30px 0;
     opacity:0; transform:translateX(200px);
     animation: textIn 4s infinite;
   }
- .intro1 p {
+.intro1 p {
     font-size:2.5rem; color:#2ECC71; margin:0;
     opacity:0; transform:translateX(200px);
     animation: textIn 4s infinite 0.8s;
   }
 
- .intro2 {
+.intro2 {
     background:#000000; flex-direction:column; color:#F4EFEA; text-align:center;
     animation: fadeSlideLong 23s infinite 4s;
     position:relative;
@@ -34,45 +34,45 @@
   #matrix {
     position:absolute; top:0; left:0; width:100%; height:100%; z-index:0;
   }
- .intro2-content {
+.intro2-content {
     position:relative; z-index:1;
   }
- .intro2 h2 {
+.intro2 h2 {
     font-size:3rem; color:#ff0000; margin:0 0 40px 0; text-shadow:0 0 10px #ff0000;
     opacity:0; transform:translateX(200px);
     animation: textInLong 10s infinite 4s;
   }
- .intro2.anggota {
+.intro2.anggota {
     opacity:0; transform:translateX(200px);
     animation: textInLong 10s infinite 5s;
   }
- .intro2 p { font-size:1.4rem; line-height:2; margin:6px 0; color:#fff; text-shadow:0 0 8px #ff0000; }
+.intro2 p { font-size:1.4rem; line-height:2; margin:6px 0; color:#fff; text-shadow:0 0 8px #ff0000; }
 
- .wonton {
+.wonton {
     background:#0A1E2E; justify-content:space-around;
     animation: fadeSlide 23s infinite;
   }
- .wonton img {
+.wonton img {
     width:45%; border-radius:20px; box-shadow:0 0 30px rgba(0,0,0,0.5);
     opacity:0; transform:scale(0.8);
     animation: imgZoom 3s infinite;
   }
- .text {
+.text {
     width:45%; color:#F4EFEA;
     opacity:0; transform:translateX(200px);
     animation: textIn 3s infinite;
   }
- .text h2 { font-size:3rem; color:#2ECC71; margin:0 0 10px 0; }
- .text p { font-size:1.5rem; line-height:1.6; }
+.text h2 { font-size:3rem; color:#2ECC71; margin:0 0 10px 0; }
+.text p { font-size:1.5rem; line-height:1.6; }
 
- .slide:nth-child(1) { animation-delay:0s; }
- .slide:nth-child(2) { animation-delay:4s; }
- .slide:nth-child(3) { animation-delay:14s; }
- .slide:nth-child(3) img,.slide:nth-child(3).text { animation-delay:14s; }
- .slide:nth-child(4) { animation-delay:17s; }
- .slide:nth-child(4) img,.slide:nth-child(4).text { animation-delay:17s; }
- .slide:nth-child(5) { animation-delay:20s; }
- .slide:nth-child(5) img,.slide:nth-child(5).text { animation-delay:20s; }
+.slide:nth-child(1) { animation-delay:0s; }
+.slide:nth-child(2) { animation-delay:4s; }
+.slide:nth-child(3) { animation-delay:14s; }
+.slide:nth-child(3) img,.slide:nth-child(3).text { animation-delay:14s; }
+.slide:nth-child(4) { animation-delay:17s; }
+.slide:nth-child(4) img,.slide:nth-child(4).text { animation-delay:17s; }
+.slide:nth-child(5) { animation-delay:20s; }
+.slide:nth-child(5) img,.slide:nth-child(5).text { animation-delay:20s; }
 
   @keyframes fadeSlide {
     0% { opacity:0; }
@@ -111,15 +111,15 @@
   }
 
   @media (max-width: 768px) {
-   .intro1 h1 { font-size:2.5rem; }
-   .intro1 p { font-size:1.8rem; }
-   .intro2 h2 { font-size:2rem; }
-   .intro2 p { font-size:1rem; line-height:1.8; }
-   .wonton { flex-direction:column; justify-content:center; text-align:center; }
-   .wonton img { width:85%; margin-bottom:20px; }
-   .text { width:85%; }
-   .text h2 { font-size:1.8rem; }
-   .text p { font-size:1rem; }
+  .intro1 h1 { font-size:2.5rem; }
+  .intro1 p { font-size:1.8rem; }
+  .intro2 h2 { font-size:2rem; }
+  .intro2 p { font-size:1rem; line-height:1.8; }
+  .wonton { flex-direction:column; justify-content:center; text-align:center; }
+  .wonton img { width:85%; margin-bottom:20px; }
+  .text { width:85%; }
+  .text h2 { font-size:1.8rem; }
+  .text p { font-size:1rem; }
   }
 </style>
 </head>
@@ -179,8 +179,11 @@
 const canvas = http://document.getElementById('matrix');
 const ctx = http://canvas.getContext('2d');
 
-http://canvas.width = http://window.innerWidth;
-http://canvas.height = http://window.innerHeight;
+function resizeCanvas() {
+  http://canvas.width = http://window.innerWidth;
+  http://canvas.height = http://window.innerHeight;
+}
+resizeCanvas();
 
 const katakana = 'アァカサタナハマヤャラワガザダバパイィキシチニヒミリヰギジヂビピウゥクスツヌフムユュルグズブヅプエェケセテネヘメレヱゲゼデベペオォコソトノホモヨョロヲゴゾドボポヴッン';
 const latin = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
@@ -188,7 +191,7 @@ const nums = '0123456789';
 const alphabet = katakana + latin + nums;
 
 const fontSize = 16;
-const columns = http://canvas.width / fontSize;
+const columns = http://Math.floor(canvas.width / fontSize);
 
 const rainDrops = [];
 for(let x = 0; x < columns; x++) {
@@ -204,7 +207,7 @@ const draw = () => {
 
   for(let i = 0; i < http://rainDrops.length; i++) {
     const text = http://alphabet.charAt(Math.floor(Math.random() _ http://alphabet.length));
-    http://ctx.fillText(text, i _ fontSize, rainDrops _ fontSize);
+    http://ctx.fillText(text, i _ fontSize, rainDrops _ fontSize);[i]
 
     if(rainDrops _ fontSize > http://canvas.height && http://Math.random() > 0.975) {
       rainDrops = 0;
@@ -213,12 +216,8 @@ const draw = () => {
   }
 };[i]
 
-setInterval(draw, 30);
-
-http://window.addEventListener('resize', () => {
-  http://canvas.width = http://window.innerWidth;
-  http://canvas.height = http://window.innerHeight;
-});
+setInterval(draw, 33);
+http://window.addEventListener('resize', resizeCanvas);
 </script>
 </body>
 </html>
